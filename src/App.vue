@@ -1,26 +1,30 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <h1>Hello Vue!</h1>
+    <div v-for="(animal, animalIndex) in animals" :key="animalIndex">
+      <h2>Animal ===> {{animal.name}}</h2>
+      <h3>food</h3>
+      <ul>
+        <li v-for="(food, foodIndex) in animal.favorites" :key="foodIndex">
+        {{food}}</li>
+      </ul>
+    </div>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  name: "App",
+  data() {
+    return {
+      animals: [
+        { name: "monkey", size: "medium", favorites: ["banana", "apple"] },
+        { name: "lion", size: "big", favorites: ["deer", "cow"] },
+        { name: "rat", size: "small", favorites: ["cheese", "rice"] },
+      ],
+    };
+  },
+};
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+<style></style>
