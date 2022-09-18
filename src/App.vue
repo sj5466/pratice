@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div>git add
     <h1>Hello Vue!</h1>
     <div v-for="(animal, animalIndex) in animals" :key="animalIndex">
       <h2>Animal ===> {{animal.name}}</h2>
